@@ -1,0 +1,53 @@
+
+BROSWER UTILITY METHODS
+-----------------------
+
+1. launchBroswer()
+=> to launch a broswer which has initiates all kind of browsers
+
+2. launchUrl()
+=> to launch the url which has get url in it
+
+3. title()
+=>to get the title of the current tab which has get title method in it.
+
+4. closeBrowser()
+=> to close the entire browser which has quit method in it.
+
+
+
+ELEMENTS UTILITY METHODS
+------------------------
+
+1.getElement()
+=> to find the element uses findElement in it.
+
+2.doSenkeys()
+=>to send string to the text box uses sendkeys in it.
+
+3.doElementGetText()
+=>to fetch the text from webelement uses gettext() in it.
+
+4.checkElementIsDisplayed()
+=> used to check whether the element is displayed in web page especially text uses isDisplayed() in it.
+
+5.getElementAttribute()
+=> used to fetch the value of an attribute uses getAttribute() in it.
+
+6.isElementDisabled()
+=> used to find whether the field is enabled or diabled this has isenabled() in it.
+
+7.title()
+=> used to get the title of the webpage
+
+8. getElements()
+=> to find the list of element uses findElements() in it.
+
+9. getSize()
+=> to get the total count uses size() in it.
+
+10.getElementsImgList()
+=> this one iterates and get attribute value of particular tag eg img tag
+
+11. getElementsTextList()
+=> this one iterates and get text of particular locator eg a tag.
