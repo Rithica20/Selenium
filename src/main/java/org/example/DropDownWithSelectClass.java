@@ -33,23 +33,25 @@ public class DropDownWithSelectClass {
 //        selectFromDropDownByIndex(dropDown,6);
 //        selectFromDropDownByText(dropDown,"Computers");
 //        selectFromDropDownByValue(dropDown,"search-alias=baby-products-intl-ship");
+//
+//        //select dropdown with options
+//        int size = getCountOfAllOptionsInDropDown(dropDown);
+//        System.out.println(size);
+//        List<String> allAvailableOptions = getAllOptions(dropDown);
+//        System.out.println(allAvailableOptions);
+//
+//        //select dropdown without value text index methods
+//       //selectDropdownWithoutTextMethod(dropDown,"Computers");
+//
+//        selectDropdownWithoutValueMethod(dropDown,"value","search-alias=baby-products-intl-ship");
 
-        //select dropdown with options
-        int size = getCountOfAllOptionsInDropDown(dropDown);
-        System.out.println(size);
-        List<String> allAvailableOptions = getAllOptions(dropDown);
-        System.out.println(allAvailableOptions);
-
-        //select dropdown without value text index methods
-       //selectDropdownWithoutTextMethod(dropDown,"Computers");
-
-        selectDropdownWithoutValueMethod(dropDown,"value","search-alias=baby-products-intl-ship");
-
-
+        //Select dropdown without select class
+        getElement(dropDown).sendKeys("Computers");
 
 
     }
     public static WebElement getElement(By locator){
+
         return driver.findElement(locator);
     }
     public static void selectFromDropDownByIndex(By locator,int index){
