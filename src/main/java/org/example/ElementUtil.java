@@ -1,5 +1,6 @@
 package org.example;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -149,6 +150,30 @@ public class ElementUtil {
             }
         }
     }
+
+                //***    Alert uitilites    ***//
+
+    public  void handlingSimpleAlert(By locator){
+        getElement(locator).click();
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
+    }
+    public  void handlingConfirmAlert(By locator){
+        getElement(locator).click();
+        Alert alert = driver.switchTo().alert();
+        alert.dismiss();
+    }
+    public  void handlingPromptAlert(By locator,String text){
+        getElement(locator).click();
+        Alert alert = driver.switchTo().alert();
+        alert.sendKeys(text);
+        alert.accept();
+    }
+
+
+
+
+
 //    public void selectDropdownWithoutValue(By locator,String value,String option){
 //        Select select =  new Select(getElement(locator));
 //        List<WebElement> allOptions = select.getOptions();

@@ -19,6 +19,7 @@ public class Sample {
         }
 
         driver.quit();
+        driver.getTitle();
 
     }
 }

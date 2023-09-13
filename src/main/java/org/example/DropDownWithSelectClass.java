@@ -60,6 +60,7 @@ public class DropDownWithSelectClass {
             System.out.println("Index cannot be negative:");
             return; // this return statement will stop the execution of the program like custom exception
         }
+
         select.selectByIndex(index);
     }
     public static void selectFromDropDownByValue(By locator,String value){

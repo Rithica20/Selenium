@@ -6,9 +6,10 @@ public class ReverseString {
         String rev = "";
         int a = str.length() - 1;
         //1: using charAt method
-        for (int i = a; i >= 0; i--) {
+        for (int i = a; i >= 0; i--) { //i =7
             rev = rev + str.charAt(i);
         }
+
         System.out.println("the reveresed string is:" + rev);
 
         // using array concept
@@ -31,4 +32,6 @@ public class ReverseString {
 
 
     }
+
+
 }

@@ -29,7 +29,6 @@ public class DisabledFieldsConcept {
 //        }
 
     }
-
     private static WebElement getElemenent(By locator){
 
         return driver.findElement(locator);

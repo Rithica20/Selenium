@@ -44,7 +44,7 @@ public class AllCombinationsOfXpath {
 //        Syntax: //tagname[contains(@attrname,'attrvalue')]
 //        //input[contains(@placeholder,'E-Mail')] :https://naveenautomationlabs.com/opencart/index.php?route=account/login
 //        //input[contains(@id,'Form_getForm')]:12---->https://www.orangehrm.com/en/book-a-free-demo/
-//
+///
 //         One more example from
 //          //long value:
 //        //dynamic attributes/ids:
@@ -135,15 +135,23 @@ public class AllCombinationsOfXpath {
 //      //a[text()='UAE']/parent::span/parent::p/ancestor::footer
 //
 //
+//      // absolute xpath
+//        /html/head/script
+
+        //copied xpath from browser
+        //*[@id="navFooter"]/div[1]/div/div[1]
+//
+//      Relative xpath
+//      //input[@placeholder='Search Amazon']
+
+//        using and or operator
+//        //span[@class='nav-line-2 'and text()='Account & Lists']
 //
 //
+//      using multiple class names
+//        //a[@class='nav-a nav-a-2   nav-progressive-attribute']
 //
-//
-//
-//
-//
-//
-//
+//          //div[@id='nav-xshop']/a[@data-csa-c-slot-id='nav_cs_0']
 //
 //
 //

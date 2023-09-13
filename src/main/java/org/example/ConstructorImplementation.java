@@ -7,6 +7,5 @@ public class ConstructorImplementation {
 
         jc.printa();
         jc1.printa();
-
     }
 }

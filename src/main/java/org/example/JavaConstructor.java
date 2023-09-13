@@ -10,10 +10,12 @@ public class JavaConstructor {
     // parameterized constructor
 
     public JavaConstructor(int a){
+
         this.a=a;
     }
 
     public void printa(){
+
         System.out.println(a);
     }
 }

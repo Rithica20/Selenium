@@ -38,7 +38,6 @@ public class BrowserUtil {
         return driver.getTitle();
     }
     public void closeBrowser(){
-
         driver.quit();
     }
 }

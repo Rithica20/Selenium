@@ -12,6 +12,7 @@ public class ActionsClassConcept {
     static WebDriver driver;
 
     public static void main(String[] args) throws InterruptedException {
+
         driver = new ChromeDriver();
 //        driver.get("https://www.globalsqa.com/demo-site/draganddrop/");
 
@@ -77,6 +78,7 @@ public class ActionsClassConcept {
 
         // RightClick concept
         driver.get("http://swisnl.github.io/jQuery-contextMenu/demo.html");
+        driver.navigate().to("http://swisnl.github.io/jQuery-contextMenu/demo.html");
         By btn = By.xpath("//span[text()='right click me']");
         By next_option = By.xpath("//li[@class='context-menu-item context-menu-icon context-menu-icon-paste']");
 
@@ -94,7 +96,8 @@ public class ActionsClassConcept {
         actions.dragAndDrop(getElement(src_locator),getElement(dest_locator)).perform();
     }
 
-    
+
+
     public static void twoLevelOfMenuHandling(By locator1, String submenu){
         Actions actions =new Actions(driver);
         actions.moveToElement(getElement(locator1)).perform();
