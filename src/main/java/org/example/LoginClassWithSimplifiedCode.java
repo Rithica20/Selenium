@@ -23,6 +23,5 @@ public class LoginClassWithSimplifiedCode {
         elementUtil.doSendKeys(pswd,"abc123");
 
         browserUtil.closeBrowser();
-
     }
 }

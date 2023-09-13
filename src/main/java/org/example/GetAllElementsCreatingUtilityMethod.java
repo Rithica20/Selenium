@@ -61,7 +61,6 @@ public class GetAllElementsCreatingUtilityMethod {
 
 
 
-
 //        By allLinks = By.tagName("a");
 //        System.out.println("total links present:: "+getLinksCount(allLinks));
 ////        System.out.println("total count of links is::"+totalSize);

@@ -23,7 +23,6 @@ public class NoSuchElementException {
        return driver.findElement(locator);
     }
     private static String title(){
-
         return  driver.getTitle();
     }
 }

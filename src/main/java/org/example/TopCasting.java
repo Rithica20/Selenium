@@ -18,7 +18,6 @@ public class TopCasting {
         RemoteWebDriver rd = new ChromeDriver();
 
         //driver.findElement()
-
         //driver.findElements(By.id)//  coming
 
         ChromiumDriver dr = new ChromeDriver();

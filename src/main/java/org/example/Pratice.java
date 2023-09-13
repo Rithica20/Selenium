@@ -16,5 +16,6 @@ public class Pratice {
         WebElement btn = driver.findElement(By.xpath("//a[text()='Sign In']"));
         Thread.sleep(4000);
         btn.click();
+
     }
 }

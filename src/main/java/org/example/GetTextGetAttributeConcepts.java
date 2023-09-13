@@ -14,7 +14,6 @@ public class GetTextGetAttributeConcepts {
         driver.get("https://naveenautomationlabs.com/opencart/index.php?route=account/register");
 
         ElementUtil eu = new ElementUtil(driver);
-
         // getText: used to fetch text from webelement
         WebElement text = driver.findElement(By.xpath("//fieldset//legend[text()='Your Personal Details']"));
         String text1 = text.getText();

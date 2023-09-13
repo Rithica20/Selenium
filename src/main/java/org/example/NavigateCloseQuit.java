@@ -20,6 +20,5 @@ public class NavigateCloseQuit {
         driver.quit(); // Session ID is null. Using WebDriver after calling quit()?
         driver.getTitle();
 
-
     }
 }

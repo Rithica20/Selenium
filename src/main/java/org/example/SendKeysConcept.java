@@ -17,7 +17,6 @@ public class SendKeysConcept {
         StringBuilder s2= new StringBuilder("1098765");
         // all the above string classes implements charsequence interface
         // we can use this in sendkeys as it uses input type charsequence
-
         By getText = By.xpath("//fieldset//legend[text()='Your Personal Details']");
 //        driver.findElement(getText).sendKeys(s,s1,s2);
 //        driver.findElement(getText).sendKeys(s+s1+s2);

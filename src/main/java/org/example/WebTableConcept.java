@@ -101,7 +101,6 @@ driver.quit();
         }
         return allText;
     }
-
     private static List<String> searchName(String name){
         driver.findElement(By.xpath("//textarea[@title='Search']")).sendKeys(name);
        // List<WebElement> allSuggestions = driver.findElements(By.xpath("//span//b[normalize-space()='salary']/ancestor::div[@class='eIPGRd']/parent::li/parent::ul/li//div[@class='wM6W7d']/span"));

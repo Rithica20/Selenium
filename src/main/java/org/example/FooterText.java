@@ -44,4 +44,5 @@ public class FooterText {
     private static String orangeHrmFooter(String link){
         return driver.findElement(By.xpath("//a[normalize-space()='"+link+"']/parent::li/parent::ul/parent::div/h5")).getText();
     }
+
 }
