@@ -4,8 +4,11 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -170,10 +173,6 @@ public class ElementUtil {
         alert.accept();
     }
 
-
-
-
-
 //    public void selectDropdownWithoutValue(By locator,String value,String option){
 //        Select select =  new Select(getElement(locator));
 //        List<WebElement> allOptions = select.getOptions();
@@ -185,6 +184,145 @@ public class ElementUtil {
 //            System.out.println("clicked");
 //        }
 //    }
+
+
+    //***********       Waits uitilites          ***************/
+
+    /**
+     * this method will check wheather the element is present of dom and
+     * it will not check wheather it is visible on the webopage
+     * @param time
+     * @param locator
+     * @return
+     */
+    public  WebElement presenceofElementLocated(int time, By locator){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+
+    /**
+     * this method will check wheather the element is visible on the web page
+     * @param time
+     * @param locator
+     * @return
+     */
+
+    public WebElement visibilityofElementLocated(int time,By locator){
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(time));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+
+
+    /**
+     * This method will wait for simple alert and
+     * it will get the text of the alert and
+     * it will click ok button
+     * @param timeout
+     */
+    public void waitForSimpleAlert(int timeout){
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(timeout));
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        System.out.println(alert.getText());
+        alert.accept();;
+    }
+    /**
+     * This method will wait for confirm alert and
+     * it will get the text of the alert and
+     * it will click cancel button
+     * @param timeout
+     */
+    public void waitForConfirmAlert(int timeout){
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(timeout));
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        System.out.println(alert.getText());
+        alert.dismiss();
+    }
+    /**
+     * This method will wait for prompt alert and
+     * it will get the text of the alert and
+     * it will send text to the input field
+     * then clicks on ok button
+     * @param timeout
+     */
+    public void waitForPromptAlert(int timeout,String text){
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(timeout));
+        Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+        alert.sendKeys(text);
+        System.out.println(alert.getText());
+        alert.accept();
+    }
+
+    /**
+     * This method will check whether all the list of elements is visible on the web page
+     * @param time
+     * @param locator
+     * @return
+     */
+    public List<WebElement> visibilityofAllElementsLocated(int time, By locator){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
+        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+    }
+
+    /**
+     * this method will check whether atleast one element is visible on the page
+     * @param time
+     * @param locator
+     * @return
+     */
+    public List<WebElement> presenceOfAllElementsLocatedBy(int time, By locator){
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(time));
+        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+    }
+
+    /**
+     * this method will check whether we can peform actions on web page
+     * @param timeinsec
+     * @param locator
+     */
+    public void elementToBeClickable(int timeinsec, By locator){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeinsec));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(locator)));
+    }
+    public void titleIs(String title,int time){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
+        try {
+            if (wait.until(ExpectedConditions.titleIs(title))) {
+                System.out.println("title is correct");
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            System.out.println("tile not found");
+        }
+    }
+    public void titleContains(String title, int time){
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(time));
+        try {
+
+            if (wait.until(ExpectedConditions.titleContains(title))) {
+                System.out.println("fraction of title is correct");
+            }
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            System.out.println("fraction of title does not found");
+        }
+
+    }
+    public String urlContains(String urlFraction, int timeout) {
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
+        try {
+            if (wait.until(ExpectedConditions.urlContains(urlFraction))) {
+                System.out.println("url fraction is correct");
+                return driver.getCurrentUrl();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("url fraction not found");
+        }
+        return null;
+    }
 }
 
 
