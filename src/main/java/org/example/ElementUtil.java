@@ -2,11 +2,10 @@ package org.example;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 
 import java.time.Duration;
 import java.util.ArrayList;
@@ -322,6 +321,37 @@ public class ElementUtil {
             System.out.println("url fraction not found");
         }
         return null;
+    }
+    public void numberOfWindowsToBe(int time,int totalWindows){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));
+        if (wait.until(ExpectedConditions.numberOfWindowsToBe(totalWindows))){
+            System.out.println("all the "+totalWindows+" windows are opened");
+        }
+        else System.out.println(""+totalWindows+"windows is not opened");
+    }
+    public WebElement presenceOfElementLocatedWithFluentWait(int pollingTime, int waitTime, By locator){
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+                .withTimeout(Duration.ofSeconds(waitTime))
+                .pollingEvery(Duration.ofSeconds(pollingTime))
+                .ignoring(NoSuchElementException.class)
+                .withMessage("waited till "+waitTime+" seconds element not found"+locator);
+        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    }
+    public WebElement visibilityOfElementLocatedWithFluentWait(int pollingTime, int waitTime, By locator){
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+                .withTimeout(Duration.ofSeconds(waitTime))
+                .pollingEvery(Duration.ofSeconds(pollingTime))
+                .ignoring(org.openqa.selenium.NoSuchElementException.class)
+                .withMessage("waited till "+waitTime+" seconds element not found\"+locator");
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+    public void waitalertIsPresentWithFluentWait(int pollingTime, int waitTime){
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+                .withTimeout(Duration.ofSeconds(waitTime))
+                .pollingEvery(Duration.ofSeconds(pollingTime))
+                .ignoring(NoSuchElementException.class)
+                .withMessage("waited till "+waitTime+" seconds element not found");
+        wait.until(ExpectedConditions.alertIsPresent());
     }
 }
 
