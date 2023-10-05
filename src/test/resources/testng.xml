@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestNG Regression Suite" verbose="4" parallel="tests">
+
+    <test name="GoogleTest">
+        <parameter name="broswername" value="chrome"></parameter>
+        <parameter name="url" value="https://www.google.com/"></parameter>
+        <classes>
+            <class name="testng.pratice.GoogleTest"></class>
+        </classes>
+    </test>
+
+    <test name="ZohoTest">
+        <parameter name="broswername" value="chrome"></parameter>
+        <parameter name="url" value="https://www.zoho.com/"></parameter>
+        <classes>
+            <class name="testng.pratice.ZohoTest"></class>
+        </classes>
+    </test>
+
+    <test name="OrangeHrmTest">
+        <parameter name="broswername" value="chrome"/>
+        <parameter name="url" value="https://www.orangehrm.com/30-day-free-trial/"></parameter>
+        <classes>
+            <class name="testng.pratice.OrnageHrmTest"/>
+        </classes>
+    </test>
+</suite>
